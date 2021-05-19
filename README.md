@@ -7,7 +7,7 @@
   
   ST20131182: Michael O'Sullivan
   
-  ST20139043 - William Thomas
+  ST20139043: William Thomas
  
 ## Project Aim
 
