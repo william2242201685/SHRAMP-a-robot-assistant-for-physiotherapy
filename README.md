@@ -1,1 +1,1 @@
-# SHRAMP-a-robot-assistant-for-physiotherapy
+# SHRAMP: A Robot Assistant For Physiotherapy
