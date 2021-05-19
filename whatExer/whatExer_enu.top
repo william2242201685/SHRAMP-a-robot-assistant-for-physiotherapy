@@ -1,0 +1,7 @@
+topic: ~whatExer()
+language: enu
+
+u:("Exercise one")^wait(excercise) 
+
+u:("Exercise Two") Playing Excercise two
+
