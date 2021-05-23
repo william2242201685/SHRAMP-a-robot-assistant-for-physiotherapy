@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3">
+    <Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s behavior. Highest level possible." x="0" y="0">
+        <bitmap>media/images/box/root.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+        <Timeline enable="0">
+            <BehaviorLayer name="behavior_layer1">
+                <BehaviorKeyframe name="keyframe1" index="1">
+                    <Diagram scale="118.921">
+                        <Box name="Unlearn Face" id="1" localization="8" tooltip="Unlearn the face which name is set on the input.&#x0A;&#x0A;Note: If the face has not been learnt before, the onFailure output will be stimulated.&#x0A;&#x0A;V1.1.0" x="660" y="174">
+                            <bitmap>media/images/box/interaction/unlearn_face.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        self.blsRunning = False
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onUnlearn(self, p):
+        #~ self.onSuccess() #~ activate output of the box
+        if(self.blsRunning ):
+            return
+        self.blsRunning = True
+        try:
+            faceDetectionModule = ALProxy("ALFaceDetection")
+        except Exception as e:
+            faceDetectionModule = None
+            self.logger.error(e)
+        if( faceDetectionModule and faceDetectionModule.forgetPerson(p) ):
+            self.onSuccess()
+        else:
+            self.onFailure()
+        self.blsRunning = False]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onUnlearn" type="3" type_size="1" nature="2" inner="0" tooltip="Name of face you want the robot to unlearn." id="2" />
+                            <Output name="onSuccess" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when the face has been successfully unlearnt." id="3" />
+                            <Output name="onFailure" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when the box encountered an error (unknown face name, for example)." id="4" />
+                        </Box>
+                        <Box name="Text Edit" id="21" localization="8" tooltip="Send the text you entered when the input is stimulated." plugin="textedit_plugin" x="364" y="173">
+                            <bitmap>media/images/box/interaction/vocabulary.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[# /!\ Generated content. Do not edit!
+class MyClass(GeneratedClass):
+	def __init__(self):
+		GeneratedClass.__init__(self)
+
+	def onInput_onStart(self):
+		self.onStopped("william,exercise one,exercise three")]]>
+</content>
+                            </script>
+                            <pluginContent>
+                                <text>
+                                    <![CDATA[william,exercise one,exercise three]]>
+</text>
+                            </pluginContent>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="1" inner="0" tooltip="To send the text on the output." id="2" />
+                            <Output name="onStopped" type="3" type_size="1" nature="2" inner="0" tooltip="The text you entered." id="3" />
+                        </Box>
+                        <Box name="Comment" id="23" localization="8" tooltip="To comment your behavior. Enter the text here and move the box where you like&#x0A;to add the comment.&#x0A;&#x0A;Note: This box is not functional and has no effect on the behavior." plugin="textedit_plugin" x="256" y="274">
+                            <bitmap>media/images/box/box-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[# /!\ Generated content. Do not edit!
+class MyClass(GeneratedClass):
+	def __init__(self):
+		GeneratedClass.__init__(self)
+
+	def onInput_onStart(self):
+		self.onStopped("Please Enter Paitent In Box Below")]]>
+</content>
+                            </script>
+                            <pluginContent>
+                                <text>
+                                    <![CDATA[Please Enter Paitent In Box Below]]>
+</text>
+                            </pluginContent>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
+                        </Box>
+                        <Box name="Comment (1)" id="25" localization="8" tooltip="To comment your behavior. Enter the text here and move the box where you like&#x0A;to add the comment.&#x0A;&#x0A;Note: This box is not functional and has no effect on the behavior." plugin="textedit_plugin" x="454" y="272">
+                            <bitmap>media/images/box/box-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[# /!\ Generated content. Do not edit!
+class MyClass(GeneratedClass):
+	def __init__(self):
+		GeneratedClass.__init__(self)
+
+	def onInput_onStart(self):
+		self.onStopped("\"name,exercise type,exercise type,cont\"")]]>
+</content>
+                            </script>
+                            <pluginContent>
+                                <text>
+                                    <![CDATA["name,exercise type,exercise type,cont"]]>
+</text>
+                            </pluginContent>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
+                        </Box>
+                        <Box name="Comment (2)" id="26" localization="8" tooltip="To comment your behavior. Enter the text here and move the box where you like&#x0A;to add the comment.&#x0A;&#x0A;Note: This box is not functional and has no effect on the behavior." plugin="textedit_plugin" x="646" y="275">
+                            <bitmap>media/images/box/box-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[# /!\ Generated content. Do not edit!
+class MyClass(GeneratedClass):
+	def __init__(self):
+		GeneratedClass.__init__(self)
+
+	def onInput_onStart(self):
+		self.onStopped("I.E: william,exercise one,exercise three")]]>
+</content>
+                            </script>
+                            <pluginContent>
+                                <text>
+                                    <![CDATA[I.E: william,exercise one,exercise three]]>
+</text>
+                            </pluginContent>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
+                        </Box>
+                        <Box name="Comment (3)" id="30" localization="8" tooltip="To comment your behavior. Enter the text here and move the box where you like&#x0A;to add the comment.&#x0A;&#x0A;Note: This box is not functional and has no effect on the behavior." plugin="textedit_plugin" x="443" y="394">
+                            <bitmap>media/images/box/box-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[# /!\ Generated content. Do not edit!
+class MyClass(GeneratedClass):
+	def __init__(self):
+		GeneratedClass.__init__(self)
+
+	def onInput_onStart(self):
+		self.onStopped("This section is designed to delete a user from naos memory/Database")]]>
+</content>
+                            </script>
+                            <pluginContent>
+                                <text>
+                                    <![CDATA[This section is designed to delete a user from naos memory/Database]]>
+</text>
+                            </pluginContent>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
+                        </Box>
+                        <Link inputowner="1" indexofinput="2" outputowner="21" indexofoutput="3" />
+                        <Link inputowner="21" indexofinput="2" outputowner="0" indexofoutput="2" />
+                        <Link inputowner="0" indexofinput="4" outputowner="1" indexofoutput="3" />
+                    </Diagram>
+                </BehaviorKeyframe>
+            </BehaviorLayer>
+        </Timeline>
+    </Box>
+</ChoregrapheProject>
