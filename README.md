@@ -1,5 +1,6 @@
+
 # SHRAMP: A Robot Assistant For Physiotherapy
-![alt text](https://static.generation-robots.com/10390-product_cover/academic-edition-robot-humano%C3%AFde-programmable-nao-evolution-rouge.jpg)
+![Nao](https://user-images.githubusercontent.com/32731620/119276191-6c28a100-bc11-11eb-92f1-78bfd851af10.png)
 
 ## Our Group
   ST20123841: Arron Fenton
