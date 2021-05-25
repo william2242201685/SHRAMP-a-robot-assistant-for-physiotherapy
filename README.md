@@ -22,7 +22,7 @@ To implement a social humanoid robot to aid in the delivery of physiotherapy app
 ## Project Demo With Nao
 We have added a demonstration video of S H R A M P a Social Humanoid Robot to Assist Medical Physiotherapy and how it works
 
-
+![vid](res/vid.png)
 
 
 Available At: https://www.youtube.com/watch?v=uBrzgLRYPTw
