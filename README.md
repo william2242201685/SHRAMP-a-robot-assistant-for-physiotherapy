@@ -25,7 +25,7 @@ We have added a demonstration video of S H R A M P a Social Humanoid Robot to As
 ![vid](res/vid.png)
 
 
-Available At: https://www.youtube.com/watch?v=uBrzgLRYPTw
+Available At: https://www.youtube.com/watch?v=i3elb6E0eVU
 
 
 ## Project Conclusion
